@@ -38,3 +38,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'coveralls', require: false
+# test coverage?
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
