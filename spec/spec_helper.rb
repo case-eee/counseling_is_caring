@@ -4,6 +4,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
+#Shoulda-matchers
+require 'shoulda-matchers'
 
 # Includes coveralls, yay for test coverage
 require 'coveralls'
