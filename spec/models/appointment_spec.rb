@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Appointment do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:session) }
+  it { should belong_to(:user).with_foreign_key('student_id')}
+  it { should have_many(:comments)}
 end
