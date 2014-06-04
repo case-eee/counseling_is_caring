@@ -1,1 +1,5 @@
 {<img src="https://travis-ci.org/nullet/counseling_is_caring.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/nullet/counseling_is_caring]
+
+
+{<img src="https://coveralls.io/repos/nullet/counseling_is_caring/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/nullet/counseling_is_caring]
+
