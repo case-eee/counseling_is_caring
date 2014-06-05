@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :appointments
 
+  get '/book' => 'appointments#view_all_sessions', as: :book_appointment
+
 
   # Example resource route with options:
   #   resources :products do

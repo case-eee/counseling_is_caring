@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+table, td, th {
+  border: 1px solid black;
+  padding: 4px;
+}
+
