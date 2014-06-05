@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: counseling_is_caring_production
-  username: counseling_is_caring
-  password: <%= ENV['COUNSELING_IS_CARING_DATABASE_PASSWORD'] %>
