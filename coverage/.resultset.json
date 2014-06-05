@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/apprentice/Desktop/counseling_is_caring/config/environment.rb": [
+      "/Users/apprentice/Desktop/counseling/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/application.rb": [
+      "/Users/apprentice/Desktop/counseling/config/application.rb": [
         1,
         null,
         1,
@@ -33,13 +33,13 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/boot.rb": [
+      "/Users/apprentice/Desktop/counseling/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/environments/test.rb": [
+      "/Users/apprentice/Desktop/counseling/config/environments/test.rb": [
         1,
         null,
         null,
@@ -80,7 +80,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/backtrace_silencers.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -89,18 +89,18 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/cookies_serializer.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/filter_parameter_logging.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/inflections.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -118,18 +118,18 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/mime_types.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/session_store.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/initializers/wrap_parameters.rb": [
+      "/Users/apprentice/Desktop/counseling/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -145,7 +145,7 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/config/routes.rb": [
+      "/Users/apprentice/Desktop/counseling/config/routes.rb": [
         1,
         null,
         null,
@@ -203,94 +203,97 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/app/helpers/application_helper.rb": [
+      "/Users/apprentice/Desktop/counseling/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/app/models/appointment.rb": [
+      "/Users/apprentice/Desktop/counseling/app/models/appointment.rb": [
         1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/counseling_is_caring/spec/models/comment_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        2,
-        2,
-        null,
-        null,
-        2,
-        2,
-        2,
-        2,
-        null
-      ],
-      "/Users/apprentice/Desktop/counseling_is_caring/app/models/comment.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/counseling_is_caring/spec/models/session_spec.rb": [
-        1,
-        null,
-        1,
-        2,
-        2,
-        null,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        null
-      ],
-      "/Users/apprentice/Desktop/counseling_is_caring/app/models/session.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/spec/models/user_spec.rb": [
-        1,
-        1,
+      "/Users/apprentice/Desktop/counseling/spec/models/comment_spec.rb": [
         1,
         null,
         1,
         null,
         2,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        2,
-        2,
         2,
         null,
-        2,
-        2,
+        null,
         2,
         2,
         2,
         2,
         null
       ],
-      "/Users/apprentice/Desktop/counseling_is_caring/app/models/user.rb": [
+      "/Users/apprentice/Desktop/counseling/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/counseling/spec/models/session_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/counseling/app/models/session.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/counseling/spec/models/user_spec.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        2,
+        2,
+        2,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/counseling/app/models/user.rb": [
         1,
         null,
         1,
@@ -302,7 +305,7 @@
         1,
         null,
         1,
-        1,
+        0,
         null,
         null,
         1,
@@ -326,6 +329,6 @@
         null
       ]
     },
-    "timestamp": 1401931894
+    "timestamp": 1401983783
   }
 }
