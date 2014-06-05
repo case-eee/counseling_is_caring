@@ -3,3 +3,4 @@
 
 {<img src="https://coveralls.io/repos/nullet/counseling_is_caring/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/nullet/counseling_is_caring]
 
+http://imgur.com/s8z3ULk.png
