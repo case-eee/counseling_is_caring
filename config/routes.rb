@@ -1,21 +1,27 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+namespace :counselor do
+  resources :sessions
+end
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+resources :appointments
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+get '/book' => 'appointments#view_all_sessions', as: :book_appointment
+# get /login (enter name pw) login#form
+# post /login (set userid in session) login#login
+# get /logout login#logout
+get '/login' => 'login#new', :as => 'login'
+post '/login' => 'login#create'
+get '/logout' => 'login#destroy', :as => 'logout'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+# get /signup (enter name pw) users#new
+# post /signup (creates a user in the db) users#create
+get '/signup' => 'users#new', :as => 'signup'
+post '/signup' => 'users#create'
 
-  resources :appointments
 
-  get '/book' => 'appointments#view_all_sessions', as: :book_appointment
+
+root 'login#new'
 
 
   # Example resource route with options:
@@ -57,4 +63,18 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+    # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
+
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
+
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+  # Example resource route (maps HTTP verbs to controller actions automatically):
 end
