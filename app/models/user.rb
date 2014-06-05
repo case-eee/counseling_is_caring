@@ -14,7 +14,7 @@ include BCrypt
 
   def password=(new_password)
     @password = Password.create(new_password)
-    self.password_hash = @password
+    self.password_hash = @password.to_s
   end
 
   def self.authenticate(email, password)
