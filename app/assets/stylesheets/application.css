@@ -15,10 +15,56 @@
  */
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #f7efda;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1, h2 {
+  color: #fd8480;
+}
+
+p, a {
+  color: #39d4c1;
+}
+
+a {
+  text-decoration: none;
+/*  &:hover {
+    color: #2fae9e;
+    text-decoration: none;
+  }*/
+}
+
+a:hover {
+  color: #2fae9e;
+  text-decoration: none;
+}
+
+table {
+  border-radius: 4px;
 }
 
 table, td, th {
   border: 1px solid black;
-  padding: 4px;
+  padding: 5px;
+  background-color: white;
 }
 
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+}
+
+#footer p {
+  color: #fd8480;
+}
