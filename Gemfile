@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 gem 'coveralls', require: false
 # test coverage?
+gem 'bcrypt'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
