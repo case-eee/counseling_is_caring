@@ -1,0 +1,28 @@
+<h1>Book an Appointment</h1>
+
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Counselor</th>
+    <th>Available?</th>
+  </tr>
+  <% @all_sessions.each do |sesh| %>
+    <tr>
+      <td><%= sesh.date.month %></td>
+      <td><%= sesh.date.day %></td>
+      <td><%= sesh.start_time %></td>
+      <td><%= sesh.end_time %></td>
+      <td><%= User.find(sesh.counselor_id).first_name %></td>
+      <td><% if sesh.available %>
+            <%= form_for :appointment, url: {action: "create"} do |f| %>
+              <%= f.hidden_field :session_id, :value => sesh.id %>
+              <%= f.submit "Book!" %>
+            <% end %>
+          <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
