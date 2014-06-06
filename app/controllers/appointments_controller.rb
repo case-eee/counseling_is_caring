@@ -1,7 +1,8 @@
 class AppointmentsController < ApplicationController
+  include ApplicationHelper
+
   def index
-    @user
-    @appointments = @user.appointments
+    @appointments = current_user.appointments
   end
 
   def view_all_sessions
@@ -9,7 +10,6 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @user
     @new_appointment = Appointment.create(appointment_params)
     close_session(@new_appointment)
   end
