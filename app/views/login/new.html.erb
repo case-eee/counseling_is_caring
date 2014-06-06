@@ -1,14 +1,18 @@
-<%= form_tag login_path, method: :post do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
 
-  <br>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <br>
+<div class='container'>
+  <%= form_tag login_path, method: :post do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
 
-  <%= submit_tag 'Login' %>
-<% end %>
+    <br>
 
-<%= link_to "Register an account", signup_path %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    <br>
+
+    <%= submit_tag 'Login' %>
+  <% end %>
+
+  <%= link_to "Register an account", signup_path %>
+</div>
