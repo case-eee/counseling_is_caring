@@ -11,6 +11,10 @@ class LoginController < ApplicationController
       case user.role
         when 'student'
           redirect_to :appointments
+        when 'counselor'
+
+          redirect_to :counselor_sessions
+
         else
           redirect_to :logout
         end

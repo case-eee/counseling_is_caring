@@ -1,0 +1,7 @@
+<!-- <h1>Welcome, <%= current_user.first_name %>! </h1> -->
+
+<% @todays_sessions.each do |lol| %>
+  <%= lol.date %>
+  <%= lol.start_time %>
+  <%= lol.end_time %><br>
+<%end%>
