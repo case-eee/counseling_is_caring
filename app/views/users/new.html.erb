@@ -1,0 +1,43 @@
+<%= form_for :user do |f| %>
+ <%= label_tag :first_name %>
+ <%= f.text_field :first_name %>
+ <br>
+
+<%= label_tag :last_name %>
+<%= f.text_field :last_name %>
+<br>
+
+<%= label_tag :role %>
+<%= f.text_field :role %>
+<br>
+ 
+<%= label_tag :email %>
+ <%= f.text_field :email %>
+<br>
+
+  <%= label_tag :password_hash %>
+  <%= f.password_field :password_hash %>
+  <br>
+
+
+
+<%= label_tag :cohort %>
+<%= f.text_field :cohort %>
+<br>
+
+
+  <%= f.submit 'Register' %>
+<% end %>
+
+
+
+
+
+
+<!--  t.string :first_name
+      t.string :last_name
+      t.string :role
+      t.string :email
+      t.string :password_hash
+      t.string :cohort
+ -->
