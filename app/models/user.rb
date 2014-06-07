@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
   has_many :appointments, foreign_key: :student_id
   has_many :comments, as: :commentable, foreign_key: :commentor_id
 
-  # validates :first_name, presence: true
-  # validates :role, presence: true
-  # validates :password_hash, presence: true
-  # validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z1-9\_\-]+\@[a-z1-9\-]+\.[a-z]+/ }
+  validates :first_name, presence: true
+  validates :role, presence: true
+  validates :password_hash, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z1-9\_\-]+\@[a-z1-9\-]+\.[a-z]+/ }
 
 
 
