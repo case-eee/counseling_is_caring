@@ -1,53 +1,14 @@
 <h1>Add Upcoming Sessions</h1>
 
-
+<h3>Please enter a date in the following format YYYY/MM/DD to create an entire day of sessions. </h3>
 <%= form_for [:counselor, @new_sesh] do |f| %>
 	<%= f.label :date %>
   <%= f.text_field :date %>
-
-   <table class='table'>
-	  <tr>
-	    <th>Start Time</th>
-	    <th>End Time</th>
-	    <th>Open/Close?</th>
-	 	</tr>
-
-  <tr>
-      <td><%= f.label '10:00' %>
-      	<%= f.hidden_field :start_time, value: '10:00' %>
-      </td>
-      <td><%= f.label '10:30' %>
-      	<%= f.hidden_field :end_time, value: '10:30' %>
-      </td>
-      <td>
-      	<%= f.radio_button :available, true, :checked => true %>
-      	<%= label :available, 'Open' %>
-      	<%= f.radio_button :available, false %>
-      	<%= label :available,'Close' %>
-      </td>
-    </tr>
-
-    <tr>
-      <td><%= f.label '10:30' %>
-      	<%= f.hidden_field :start_time, value: '10:30' %>
-      </td>
-      <td><%= f.label '11:00' %>
-      	<%= f.hidden_field :end_time, value: '11:00' %>
-      </td>
-      <td>
-      	<%= f.radio_button :available, true, :checked => true %>
-      	<%= label :available, 'Open' %>
-      	<%= f.radio_button :available, false %>
-      	<%= label :available,'Close' %>
-      </td>
-    </tr>
-</table>
+  <br>
  
-   <%= f.submit "Submit" %>
+   <%= f.submit "Create Day!" %>
 <% end %>
 
-
-
-
+<br>
 
 <%= link_to "Back to Home", counselor_sessions_path %>

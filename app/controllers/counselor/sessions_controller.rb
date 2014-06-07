@@ -12,14 +12,13 @@ class Counselor::SessionsController < ApplicationController
 
 
   def create
-    puts 'WE ARE CREATING!'
-    p params
-    # @new_sesh = Session.new(new_sesh_params)
-    # if @new_sesh.save
-    #   redirect_to :index
-    # else
-    #   render :new
-    # end
+    create_sessions(params[:session][:date])
+
+    @day.each do |sesh|
+      current_user.sessions << sesh
+    end
+    
+    redirect_to counselor_sessions_path
   end
 
   def show
@@ -28,9 +27,4 @@ class Counselor::SessionsController < ApplicationController
   end
 
 
-  private
-
-  def new_sesh_params
-    params.require(:sessions).permit(:date, :start_time, :end_time, :available)
-  end
 end
