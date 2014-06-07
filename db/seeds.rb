@@ -8,59 +8,57 @@
 require 'date'
 
 #Counselors
-erin = User.create!(first_name: 'Erin', last_name: 'Jones', email: 'erin@mentalhealth.com', role: 'counselor', password: 'helping', cohort: 'staff')
-dave = User.create!(first_name: 'Dave', last_name: 'Hoover', email: 'dave@mentalhealth.com', role: 'counselor', password: 'helping', cohort: 'staff')
+erin = User.create!(first_name: 'Erin', last_name: 'Jones', email: 'erin@dbc.com', role: 'counselor', password: 'brainz', cohort: 'staff')
 
 #Students
-steve = User.create!(first_name: 'Steve', last_name: 'Yim', email: 'steve@dbc.com', role: 'student', password: 'learning', cohort: 'nighthoney')
 andrew = User.create!(first_name: 'Andrew', last_name: 'Larson', email: 'andqwoo@gmail.com', role: 'student', password: 'computerz', cohort: 'nighthawk')
 
-
-todays_date = Date.today.to_s
-time_now =Time.now
-
 #Sessions
-session1 = Session.create!(date: '2014-06-06', start_time: '10:00', end_time: '10:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '10:30', end_time: '11:00', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '11:00', end_time: '11:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '11:30', end_time: '12:00', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '12:00', end_time: '12:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '12:30', end_time: '01:00', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '01:00', end_time: '01:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '01:30', end_time: '02:00', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '02:00', end_time: '02:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '02:30', end_time: '03:00', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '03:00', end_time: '03:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '03:30', end_time: '04:00', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '04:00', end_time: '04:30', available: true, counselor_id: 1)
-session1 = Session.create!(date: '2014-06-06', start_time: '04:30', end_time: '05:00', available: true, counselor_id: 1)
+day1 = [
+	session1 = Session.create!(date: '2014-06-06', start_time: '10:00', end_time: '10:30', available: true, counselor_id: 1), 
+	session2 = Session.create!(date: '2014-06-06', start_time: '10:30', end_time: '11:00', available: true, counselor_id: 1), 
+	session3 = Session.create!(date: '2014-06-06', start_time: '11:00', end_time: '11:30', available: true, counselor_id: 1), 
+	session4 = Session.create!(date: '2014-06-06', start_time: '11:30', end_time: '12:00', available: true, counselor_id: 1), 
+	session5 = Session.create!(date: '2014-06-06', start_time: '12:00', end_time: '12:30', available: true, counselor_id: 1), 
+	session6 = Session.create!(date: '2014-06-06', start_time: '12:30', end_time: '01:00', available: true, counselor_id: 1), 
+	session7 = Session.create!(date: '2014-06-06', start_time: '01:00', end_time: '01:30', available: true, counselor_id: 1), 
+	session8 = Session.create!(date: '2014-06-06', start_time: '01:30', end_time: '02:00', available: true, counselor_id: 1), 
+	session9 = Session.create!(date: '2014-06-06', start_time: '02:00', end_time: '02:30', available: true, counselor_id: 1), 
+	session10 = Session.create!(date: '2014-06-06', start_time: '02:30', end_time: '03:00', available: true, counselor_id: 1), 
+	session11 = Session.create!(date: '2014-06-06', start_time: '03:00', end_time: '03:30', available: true, counselor_id: 1), 
+	session12 = Session.create!(date: '2014-06-06', start_time: '03:30', end_time: '04:00', available: true, counselor_id: 1), 
+	session13 = Session.create!(date: '2014-06-06', start_time: '04:00', end_time: '04:30', available: true, counselor_id: 1), 
+	session14 = Session.create!(date: '2014-06-06', start_time: '04:30', end_time: '05:00', available: true, counselor_id: 1)
+]
 
-session2 = Session.create!(date: '2014-06-07', start_time: '10:00', end_time: '10:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '10:30', end_time: '11:00', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '11:00', end_time: '11:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '11:30', end_time: '12:00', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '12:00', end_time: '12:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '12:30', end_time: '01:00', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '01:00', end_time: '01:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '01:30', end_time: '02:00', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '02:00', end_time: '02:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '02:30', end_time: '03:00', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '03:00', end_time: '03:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '03:30', end_time: '04:00', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '04:00', end_time: '04:30', available: true, counselor_id: 1)
-session2 = Session.create!(date: '2014-06-07', start_time: '04:30', end_time: '05:00', available: true, counselor_id: 1)
+day2 = [
+	session15 = Session.create!(date: '2014-06-07', start_time: '10:00', end_time: '10:30', available: true, counselor_id: 1), 
+	session16 = Session.create!(date: '2014-06-07', start_time: '10:30', end_time: '11:00', available: true, counselor_id: 1), 
+	session17 = Session.create!(date: '2014-06-07', start_time: '11:00', end_time: '11:30', available: true, counselor_id: 1), 
+	session18 = Session.create!(date: '2014-06-07', start_time: '11:30', end_time: '12:00', available: true, counselor_id: 1), 
+	session19 = Session.create!(date: '2014-06-07', start_time: '12:00', end_time: '12:30', available: true, counselor_id: 1), 
+	session20 = Session.create!(date: '2014-06-07', start_time: '12:30', end_time: '01:00', available: true, counselor_id: 1), 
+	session21 = Session.create!(date: '2014-06-07', start_time: '01:00', end_time: '01:30', available: true, counselor_id: 1), 
+	session22 = Session.create!(date: '2014-06-07', start_time: '01:30', end_time: '02:00', available: true, counselor_id: 1), 
+	session23 = Session.create!(date: '2014-06-07', start_time: '02:00', end_time: '02:30', available: true, counselor_id: 1), 
+	session24 = Session.create!(date: '2014-06-07', start_time: '02:30', end_time: '03:00', available: true, counselor_id: 1), 
+	session25 = Session.create!(date: '2014-06-07', start_time: '03:00', end_time: '03:30', available: true, counselor_id: 1), 
+	session26 = Session.create!(date: '2014-06-07', start_time: '03:30', end_time: '04:00', available: true, counselor_id: 1), 
+	session27 = Session.create!(date: '2014-06-07', start_time: '04:00', end_time: '04:30', available: true, counselor_id: 1), 
+	session28 = Session.create!(date: '2014-06-07', start_time: '04:30', end_time: '05:00', available: true, counselor_id: 1)
+]
 
-# erin.sessions << session1
-# session2 = Session.create!(date: '2014-06-07', start_time: '2014-06-07 16:05:45', end_time: '2014-06-07 20:05:45', available: true)
-# erin.sessions << session2
-# session3 = Session.create!(date: '2014-06-08', start_time: '2014-06-08 18:05:45', end_time: '2014-06-08 20:05:45', available: true)
-# erin.sessions << session3
-# session4 = Session.create!(date: '2014-06-06', start_time: '2014-06-06 18:05:45', end_time: '2014-06-06 20:05:45', available: true)
-# session5 = Session.create!(date: '2014-06-06', start_time: '2014-06-06 16:05:45', end_time: '2014-06-06 20:05:45', available: true)
-# dave.sessions << session4
-# dave.sessions << session5
+day1.each do |sesh|
+	erin.sessions << sesh
+end
+
+day2.each do |sesh|
+	erin.sessions << sesh
+end
+
 
 #Appointments
 andrew.appointments << Appointment.create!(session_id: session1.id)
-# steve.appointments << Appointment.create!(session_id: session2.id)
-# andrew.appointments << Appointment.create!(session_id: session3.id)
+andrew.appointments << Appointment.create!(session_id: session5.id)
+andrew.appointments << Appointment.create!(session_id: session16.id)
+

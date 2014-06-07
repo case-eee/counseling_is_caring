@@ -45,6 +45,7 @@ a:hover {
 
 table {
   border-radius: 4px;
+  margin: 20px;
 }
 
 table, td, th {
