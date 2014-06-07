@@ -18,7 +18,7 @@
       <td><%= Session.find(appt.session_id).start_time %></td>
       <td><%= Session.find(appt.session_id).end_time %></td>
       <td><%= User.find(Session.find(appt.session_id).counselor_id).first_name %></td>
-      <td><%= link_to 'Destroy', appointment_path(appt),
+      <td><%= link_to 'Cancel', appointment_path(appt),
                 method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
     </tr>

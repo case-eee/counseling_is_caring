@@ -26,9 +26,11 @@
 <!--  NEED TO ADD: Upcoming Appointments -->
 <h2>Upcoming Appointments</h2>
 <% @future_dates.each do |date| %>
-  <a href='/counselor/sessions/<%= date %>'><%=date%></a><br>
+  <div><a href='/counselor/sessions/<%= date %>'><%=date%></a></div>
 <% end %>
 
 <%#= link_to "A Certain Date", counselor_session_path %>
 
-<%= link_to "Add Future Sessions", new_counselor_session_path %>
+<div>
+  <%= link_to "Add Future Sessions", new_counselor_session_path %>
+</div>
