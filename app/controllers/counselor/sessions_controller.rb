@@ -1,20 +1,8 @@
 class Counselor::SessionsController < ApplicationController
+  include ApplicationHelper
 
   def index
-    # @counselor = current_user
-    @todays_date = Date.today
-    #@after_today = logic for later than @todays_date
-    @todays_sessions = Session.where(date: @todays_date)
-
-    @future_dates = Session.where("date >= ?", @todays_date).distinct.pluck(:date)
-    # @future_dates
-    @future_dates.map! do |date| date.to_s end
-    p @future_dates
-
-    # @future_dates.map! do |date|
-
-    # @future_sessions = Session.where("date >= ?", @todays_date).distinct.pluck(:date)
-
+    #moved out to helper as methods
   end
 
   def new
