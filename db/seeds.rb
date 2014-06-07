@@ -16,6 +16,7 @@ andrew = User.create!(first_name: 'Andrew', last_name: 'Larson', email: 'andqwoo
 
 #Sessions
 
+
 date = Date.today.to_s
 date2 = (Date.today + 1).to_s
 
@@ -71,3 +72,4 @@ session5.update_attributes(available: false)
 
 andrew.appointments << Appointment.create!(session_id: session16.id)
 session16.update_attributes(available: false)
+
