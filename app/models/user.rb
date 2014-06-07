@@ -1,4 +1,5 @@
 require 'bcrypt'
+include BCrypt
 
 class User < ActiveRecord::Base
   has_many :sessions, foreign_key: :counselor_id
@@ -8,11 +9,10 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :role, presence: true
   validates :password_hash, presence: true
-  validates :email, presence: true, uniqueness: true, format: { with: /\A[a-zA-Z1-9\_\-]+\@[a-z1-9\-]+\.[a-z]+/ }
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: /\A[a-zA-Z1-9\_\-]+\@[a-z1-9\-]+\.[a-z]+/ }
 
-
-
-include BCrypt
 
  def password
     @password ||= Password.new(password_hash)
