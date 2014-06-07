@@ -2,7 +2,17 @@
   width: 250px;
 }
 
-form {
+/*form {
   line-height: 2em;
   text-align: right;
+}*/
+
+.new_sessions {
+  clear: both;
+  text-align: left;
+}
+
+.table {
+	clear: both;
+	text-align: left;
 }

@@ -94,7 +94,7 @@ tr:hover td {
 
 
 #footer {
-  position: fixed;
+/*  position: fixed;*/
   bottom: 0px;
   width: 100%;
   text-align: center;
@@ -103,3 +103,4 @@ tr:hover td {
 #footer p {
   color: #fd8480;
 }
+

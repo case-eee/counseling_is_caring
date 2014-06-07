@@ -1,5 +1,10 @@
 <h1>Welcome, <%= current_user.first_name %>! </h1>
 
+<div>
+  <%= link_to "Add Future Sessions", :new_counselor_session %>
+</div>
+
+
 <h2>Today's Appointments</h2>
 <h2> <%= today %> </h2>
 <table>
@@ -35,8 +40,9 @@
   <div><a href='/counselor/sessions/<%= date %>'><%=date%></a></div>
 <% end %>
 
-<%#= link_to "A Certain Date", counselor_session_path %>
+<br>
+<br>
 
 <div>
-  <%= link_to "Add Future Sessions", new_counselor_session_path %>
+  <%= link_to 'Logout', logout_path %>
 </div>
