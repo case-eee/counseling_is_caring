@@ -14,8 +14,8 @@
  *= require_self
  */
 body {
-  font-family: 'Montserrat', sans-serif;
   background-color: #f7efda;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
@@ -23,6 +23,8 @@ h1 {
 }
 
 h1, h2 {
+  /*font-family: 'Montserrat', sans-serif;*/
+  font-family: 'Varela Round', sans-serif;
   color: #fd8480;
 }
 
@@ -44,8 +46,16 @@ a:hover {
 }
 
 table {
-  border-radius: 4px;
-  margin: 20px;
+  /*border-radius: 8px;*/
+  margin: 25px auto;
+  font-family: 'Open Sans', sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #00cccc;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+     0px 10px 20px rgba(0,0,0,0.05),
+     0px 20px 20px rgba(0,0,0,0.05),
+     0px 30px 20px rgba(0,0,0,0.05);
 }
 
 table, td, th {
@@ -55,9 +65,33 @@ table, td, th {
 }
 
 th, td {
-  padding: 8px;
   text-align: center;
+  border: 1px solid #eee;
+  padding: 12px 35px;
+  border-collapse: collapse;
 }
+
+th {
+  background: #00cccc;
+  /*background: #39d4c1;*/
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
+td {
+  color: #999;
+}
+
+tr:hover {
+  background: #f4f4f4;
+}
+
+tr:hover td {
+  color: #555;
+}
+
 
 #footer {
   position: fixed;

@@ -12,17 +12,20 @@ class LoginController < ApplicationController
 
       session[:user_id] = user.id
       case user.role
-        when 'student'
-          redirect_to :appointments
-        when 'counselor'
 
+      when 'student'
+        redirect_to :appointments
+      when 'counselor'
+        redirect_to :counselor_sessions
+      else
+        redirect_to :logout
+      end
 
-          redirect_to :counselor_sessions
-
-        else
-          redirect_to :logout
-        end
+    else
+      @errors = ['Incorrect username or password']
+      render :new
     end
+
   end
 
   def destroy

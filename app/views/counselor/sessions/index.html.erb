@@ -6,7 +6,7 @@
 
 
 <h2>Today's Appointments</h2>
-<h2> <%= @todays_date %> </h2>
+<h2> <%= today %> </h2>
 <table>
   <tr>
     <th>Start Time</th>
@@ -14,11 +14,17 @@
     <th>Available?</th>
     <th>Student</th>
   </tr>
-  <% @todays_sessions.each do |sesh| %>
+  <% today_sessions.sort_by.each do |sesh| %>
     <tr>
       <td><%= sesh.start_time %></td>
       <td><%= sesh.end_time %></td>
-      <td><%= sesh.available %></td>
+      <td>
+        <% if sesh.available %>
+          Yes
+        <% else %>
+          No
+        <% end %>
+      </td>
       <td>
         <% if !(sesh.available) %>
           <%= User.find(Appointment.find_by_session_id(sesh.id).student_id).first_name %>
@@ -30,7 +36,7 @@
 
 <!--  NEED TO ADD: Upcoming Appointments -->
 <h2>Upcoming Appointments</h2>
-<% @future_dates.each do |date| %>
+<% future_days.each do |date| %>
   <div><a href='/counselor/sessions/<%= date %>'><%=date%></a></div>
 <% end %>
 

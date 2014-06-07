@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 
   def create
       # raise params.inspect
-  user = User.new(user_params)
-  user.password = params[:user][:password_hash]
+    user = User.new(user_params)
+    user.password = params[:user][:password_hash]
     if user.save
       redirect_to :root
     else
