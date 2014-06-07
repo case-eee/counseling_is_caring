@@ -19,11 +19,11 @@ date = Date.today.to_s
 date2 = (Date.today + 1).to_s
 
 day1 = [
-	session1 = Session.create!(date: date, start_time: '10:00', end_time: '10:30', available: true),
+	session1 = Session.create!(date: date, start_time: '10:00', end_time: '10:30', available: false),
 	session2 = Session.create!(date: date, start_time: '10:30', end_time: '11:00', available: true),
 	session3 = Session.create!(date: date, start_time: '11:00', end_time: '11:30', available: true),
 	session4 = Session.create!(date: date, start_time: '11:30', end_time: '12:00', available: true),
-	session5 = Session.create!(date: date, start_time: '12:00', end_time: '12:30', available: true),
+	session5 = Session.create!(date: date, start_time: '12:00', end_time: '12:30', available: false),
 	session6 = Session.create!(date: date, start_time: '12:30', end_time: '01:00', available: true),
 	session7 = Session.create!(date: date, start_time: '01:00', end_time: '01:30', available: true),
 	session8 = Session.create!(date: date, start_time: '01:30', end_time: '02:00', available: true),
@@ -37,7 +37,7 @@ day1 = [
 
 day2 = [
 	session15 = Session.create!(date: date2, start_time: '10:00', end_time: '10:30', available: true),
-	session16 = Session.create!(date: date2, start_time: '10:30', end_time: '11:00', available: true),
+	session16 = Session.create!(date: date2, start_time: '10:30', end_time: '11:00', available: false),
 	session17 = Session.create!(date: date2, start_time: '11:00', end_time: '11:30', available: true),
 	session18 = Session.create!(date: date2, start_time: '11:30', end_time: '12:00', available: true),
 	session19 = Session.create!(date: date2, start_time: '12:00', end_time: '12:30', available: true),
