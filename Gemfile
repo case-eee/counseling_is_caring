@@ -49,3 +49,6 @@ end
 group :test do
   gem 'shoulda-matchers', require: false
 end
+
+gem 'table_print'
+# allows for easy to read ActiveRecord printing in the console
