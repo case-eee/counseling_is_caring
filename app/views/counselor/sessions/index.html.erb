@@ -13,7 +13,13 @@
     <tr>
       <td><%= sesh.start_time %></td>
       <td><%= sesh.end_time %></td>
-      <td><%= sesh.available %></td>
+      <td>
+        <% if sesh.available %>
+          Yes
+        <% else %>
+          No
+        <% end %>
+      </td>
       <td>
         <% if !(sesh.available) %>
           <%= User.find(Appointment.find_by_session_id(sesh.id).student_id).first_name %>
