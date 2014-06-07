@@ -1,10 +1,16 @@
 <div class='container'>
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
   <%= form_tag login_path, method: :post do %>
     <%= label_tag :email %>
     <%= text_field_tag :email %>
 
     <br>
-
+  
     <%= label_tag :password %>
     <%= password_field_tag :password %>
     <br>
