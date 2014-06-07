@@ -5,13 +5,17 @@ class LoginController < ApplicationController
   end
 
   def create
+
     user = User.authenticate(params[:email], params[:password])
+
     if user
+
       session[:user_id] = user.id
       case user.role
         when 'student'
           redirect_to :appointments
         when 'counselor'
+
 
           redirect_to :counselor_sessions
 
