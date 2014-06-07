@@ -17,8 +17,21 @@ class Counselor::SessionsController < ApplicationController
 
   end
 
+
   def new
-    # Does this need to exist?
+    @new_sesh = Session.new()
+  end
+
+
+  def create
+    puts 'WE ARE CREATING!'
+    p params
+    # @new_sesh = Session.new(new_sesh_params)
+    # if @new_sesh.save
+    #   redirect_to :index
+    # else
+    #   render :new
+    # end
   end
 
   def show
@@ -26,4 +39,10 @@ class Counselor::SessionsController < ApplicationController
     @todays_sessions = Session.where(date: @selected_date)
   end
 
+
+  private
+
+  def new_sesh_params
+    params.require(:sessions).permit(:date, :start_time, :end_time, :available)
+  end
 end
