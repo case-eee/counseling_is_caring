@@ -1,5 +1,9 @@
 <h1>Book an Appointment</h1>
 
+<div>
+  <%= link_to 'Back to your Homepage', appointments_path %>
+</div>
+
 <table>
   <tr>
     <th>Month</th>
@@ -10,21 +14,20 @@
     <th>Available?</th>
   </tr>
   <% @all_sessions.each do |sesh| %>
-    <tr>
-      <td><%= sesh.date.month %></td>
-      <td><%= sesh.date.day %></td>
-      <td><%= sesh.start_time %></td>
-      <td><%= sesh.end_time %></td>
-      <td><%= User.find(sesh.counselor_id).first_name %></td>
-      <td><% if sesh.available %>
-            <%= form_for :appointment, url: {action: "create"} do |f| %>
-              <%= f.hidden_field :session_id, :value => sesh.id %>
-              <%= f.submit "Book!" %>
-            <% end %>
+    <% if sesh.available %>
+      <tr>
+        <td><%= sesh.date.month %></td>
+        <td><%= sesh.date.day %></td>
+        <td><%= sesh.start_time %></td>
+        <td><%= sesh.end_time %></td>
+        <td><%= User.find(sesh.counselor_id).first_name %></td>
+        <td>
+          <%= form_for :appointment, url: {action: "create"} do |f| %>
+            <%= f.hidden_field :session_id, :value => sesh.id %>
+            <%= f.submit "Book!" %>
           <% end %>
-      </td>
-    </tr>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
-
-<%= link_to 'Back to your Homepage', appointments_path %>
