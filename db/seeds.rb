@@ -11,7 +11,7 @@ require 'date'
 erin = User.create!(first_name: 'Erin', last_name: 'Jones', email: 'erin@dbc.com', role: 'counselor', password: 'brainz', cohort: 'staff')
 
 #Students
-andrew = User.create!(first_name: 'Andrew', last_name: 'Larson', email: 'andqwoo@gmail.com', role: 'student', password_hash: 'computerz', cohort: 'nighthawk')
+andrew = User.create!(first_name: 'Andrew', last_name: 'Larson', email: 'andqwoo@gmail.com', role: 'student', password: 'computerz', cohort: 'nighthawk')
 
 #Sessions
 

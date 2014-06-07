@@ -21,6 +21,9 @@ class Counselor::SessionsController < ApplicationController
     # Does this need to exist?
   end
 
-
+  def show
+    @selected_date = params[:id]
+    @todays_sessions = Session.where(date: @selected_date)
+  end
 
 end

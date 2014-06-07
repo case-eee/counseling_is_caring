@@ -1,1 +1,21 @@
-<h1>Whatever Date</h1>
+<h1><%= @selected_date %></h1>
+<table>
+  <tr>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Available?</th>
+    <th>Student</th>
+  </tr>
+  <% @todays_sessions.each do |sesh| %>
+    <tr>
+      <td><%= sesh.start_time %></td>
+      <td><%= sesh.end_time %></td>
+      <td><%= sesh.available %></td>
+      <td>
+        <% if !(sesh.available) %>
+          <%= User.find(Appointment.find_by_session_id(sesh.id).student_id).first_name %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
