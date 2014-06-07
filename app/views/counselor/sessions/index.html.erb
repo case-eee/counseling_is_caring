@@ -1,7 +1,7 @@
 <h1>Welcome, <%= current_user.first_name %>! </h1>
 
 <h2>Today's Appointments</h2>
-<h2> <%= @todays_date %> </h2>
+<h2> <%= today %> </h2>
 <table>
   <tr>
     <th>Start Time</th>
@@ -9,7 +9,7 @@
     <th>Available?</th>
     <th>Student</th>
   </tr>
-  <% @todays_sessions.each do |sesh| %>
+  <% today_sessions.sort_by.each do |sesh| %>
     <tr>
       <td><%= sesh.start_time %></td>
       <td><%= sesh.end_time %></td>
@@ -25,7 +25,7 @@
 
 <!--  NEED TO ADD: Upcoming Appointments -->
 <h2>Upcoming Appointments</h2>
-<% @future_dates.each do |date| %>
+<% future_days.each do |date| %>
   <div><a href='/counselor/sessions/<%= date %>'><%=date%></a></div>
 <% end %>
 
