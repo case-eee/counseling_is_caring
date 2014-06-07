@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20140604203845) do
 
   create_table "sessions", force: true do |t|
     t.date     "date"
-    t.string   "start_time"
-    t.string   "end_time"
+    t.time     "start_time"
+    t.time     "end_time"
     t.boolean  "available"
     t.integer  "counselor_id"
     t.datetime "created_at"
