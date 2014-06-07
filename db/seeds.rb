@@ -5,25 +5,27 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 require 'date'
 
 #Counselors
 erin = User.create!(first_name: 'Erin', last_name: 'Jones', email: 'erin@dbc.com', role: 'counselor', password: 'brainz', cohort: 'staff')
 
 #Students
-andrew = User.create!(first_name: 'Andrew', last_name: 'Larson', email: 'andqwoo@gmail.com', role: 'student', password_hash: 'computerz', cohort: 'nighthawk')
+andrew = User.create!(first_name: 'Andrew', last_name: 'Larson', email: 'andqwoo@gmail.com', role: 'student', password: 'computerz', cohort: 'nighthawk')
 
 #Sessions
+
 
 date = Date.today.to_s
 date2 = (Date.today + 1).to_s
 
 day1 = [
-	session1 = Session.create!(date: date, start_time: '10:00', end_time: '10:30', available: false),
+	session1 = Session.create!(date: date, start_time: '10:00', end_time: '10:30', available: true),
 	session2 = Session.create!(date: date, start_time: '10:30', end_time: '11:00', available: true),
 	session3 = Session.create!(date: date, start_time: '11:00', end_time: '11:30', available: true),
 	session4 = Session.create!(date: date, start_time: '11:30', end_time: '12:00', available: true),
-	session5 = Session.create!(date: date, start_time: '12:00', end_time: '12:30', available: false),
+	session5 = Session.create!(date: date, start_time: '12:00', end_time: '12:30', available: true),
 	session6 = Session.create!(date: date, start_time: '12:30', end_time: '01:00', available: true),
 	session7 = Session.create!(date: date, start_time: '01:00', end_time: '01:30', available: true),
 	session8 = Session.create!(date: date, start_time: '01:30', end_time: '02:00', available: true),
@@ -37,7 +39,7 @@ day1 = [
 
 day2 = [
 	session15 = Session.create!(date: date2, start_time: '10:00', end_time: '10:30', available: true),
-	session16 = Session.create!(date: date2, start_time: '10:30', end_time: '11:00', available: false),
+	session16 = Session.create!(date: date2, start_time: '10:30', end_time: '11:00', available: true),
 	session17 = Session.create!(date: date2, start_time: '11:00', end_time: '11:30', available: true),
 	session18 = Session.create!(date: date2, start_time: '11:30', end_time: '12:00', available: true),
 	session19 = Session.create!(date: date2, start_time: '12:00', end_time: '12:30', available: true),
@@ -63,6 +65,11 @@ end
 
 #Appointments
 andrew.appointments << Appointment.create!(session_id: session1.id)
+session1.update_attributes(available: false)
+
 andrew.appointments << Appointment.create!(session_id: session5.id)
+session5.update_attributes(available: false)
+
 andrew.appointments << Appointment.create!(session_id: session16.id)
+session16.update_attributes(available: false)
 
