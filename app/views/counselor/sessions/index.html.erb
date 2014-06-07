@@ -1,7 +1,34 @@
-<!-- <h1>Welcome, <%= current_user.first_name %>! </h1> -->
+<h1>Welcome, <%= current_user.first_name %>! </h1>
 
-<% @todays_sessions.each do |lol| %>
-  <%= lol.date %>
-  <%= lol.start_time %>
-  <%= lol.end_time %><br>
-<%end%>
+<h2>Today's Appointments</h2>
+<h2> <%= @todays_date %> </h2>
+<table>
+  <tr>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Available?</th>
+    <th>Student</th>
+  </tr>
+  <% @todays_sessions.each do |sesh| %>
+    <tr>
+      <td><%= sesh.start_time %></td>
+      <td><%= sesh.end_time %></td>
+      <td><%= sesh.available %></td>
+      <td>
+        <% if !(sesh.available) %>
+          <%= User.find(Appointment.find(sesh.id).student_id).first_name %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<!--  NEED TO ADD: Upcoming Appointments -->
+<h2>Upcoming Appointments</h2>
+<% @future_dates.each do |date| %>
+  <a href='/counselor/sessions/<%= date %>'><%=date%></a><br>
+<% end %>
+
+<%#= link_to "A Certain Date", counselor_session_path %>
+
+<%= link_to "Add Future Sessions", new_counselor_session_path %>
