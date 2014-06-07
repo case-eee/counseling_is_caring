@@ -16,7 +16,7 @@
       <td><%= sesh.available %></td>
       <td>
         <% if !(sesh.available) %>
-          <%= User.find(Appointment.find(sesh.id).student_id).first_name %>
+          <%= User.find(Appointment.find_by_session_id(sesh.id).student_id).first_name %>
         <% end %>
       </td>
     </tr>
