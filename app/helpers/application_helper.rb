@@ -25,24 +25,8 @@ module ApplicationHelper
     Date.parse(date_text)
   end
 
-  def past_sessions
-    past = []
-    current_user.appointments.each do |appointment|
-      if appointment.session.date <= today
-        past << appointment
-      end
-    end
-    past    
-  end
-
-  def future_appointments
-    future_sessions = []
-    current_user.appointments.each do |appointment|
-      if appointment.session.date > today
-        future_sessions << appointment
-      end
-    end    
-    future_sessions
+  def format_month(date)
+    date.strftime("%B")
   end
 
   def date_string

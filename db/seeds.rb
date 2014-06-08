@@ -73,3 +73,14 @@ session5.update_attributes(available: false)
 andrew.appointments << Appointment.create!(session_id: session16.id)
 session16.update_attributes(available: false)
 
+#Erin Closing Sessions for each "day"
+#day1
+session2.update_attributes(available: false)
+session3.update_attributes(available: false)
+session12.update_attributes(available: false)
+session13.update_attributes(available: false)
+session14.update_attributes(available: false)
+#day2
+session18.update_attributes(available: false)
+session19.update_attributes(available: false)
+session20.update_attributes(available: false)

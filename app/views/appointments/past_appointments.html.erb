@@ -1,26 +1,20 @@
 <h2>Past Appointments</h2>
+
 <table>
   <tr>
-    <th>Month</th>
     <th>Date</th>
-    <th>Start Time</th>
-    <th>End Time</th>
     <th>Counselor</th>
     <th>View Notes</th>
   </tr>
-  <% @appointments.each do |appt| %>
+  <% past_sessions.each do |session| %>
     <tr>
-      <td><%= Session.find(appt.session_id).date.strftime('%B') %></td>
-      <td><%= Session.find(appt.session_id).date.day %></td>
-      <td><%= Session.find(appt.session_id).start_time %></td>
-      <td><%= Session.find(appt.session_id).end_time %></td>
-      <td><%= User.find(Session.find(appt.session_id).counselor_id).first_name %></td>
+      <td><%= formatted_date(session.date) %></td>
+      <td><%= session.counselor.first_name %></td>
       <td><% link_to "Notes", '#' %></td>
     </tr>
   <% end %>
 </table>
 <br>
-
 <div>
   <%= link_to 'Back to your Homepage', appointments_path %>
 </div>
