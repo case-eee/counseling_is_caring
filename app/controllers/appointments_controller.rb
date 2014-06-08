@@ -4,10 +4,12 @@ class AppointmentsController < ApplicationController
   def index
     @appointments = current_user.appointments
 
+
   end
 
   def view_all_sessions
     @all_sessions = Session.all
+    Session
   end
 
   def create

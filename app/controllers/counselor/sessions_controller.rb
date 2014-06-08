@@ -1,5 +1,5 @@
 class Counselor::SessionsController < ApplicationController
-  include ApplicationHelper
+  include CounselorHelper
 
   def index
     #moved out to helper as methods
@@ -14,16 +14,16 @@ class Counselor::SessionsController < ApplicationController
   def create
     create_sessions(params[:session][:date])
 
-    @day.each do |sesh|
-      current_user.sessions << sesh
+    @day.each do |session|
+      current_user.sessions << session
     end
-    
+
     redirect_to counselor_sessions_path
   end
 
   def show
-    @selected_date = params[:id]
-    @todays_sessions = Session.where(date: @selected_date)
+    @url_date = params[:id]
+    @todays_sessions = day_sessions(@url_date)
   end
 
 

@@ -1,4 +1,4 @@
-<h1><%= @selected_date %></h1>
+<h1><%= formatted_date(text_to_date(@url_date)) %></h1>
 <table>
   <tr>
     <th>Start Time</th>
@@ -6,14 +6,14 @@
     <th>Available?</th>
     <th>Student</th>
   </tr>
-  <% @todays_sessions.each do |sesh| %>
+  <% @todays_sessions.each do |session| %>
     <tr>
-      <td><%= sesh.start_time %></td>
-      <td><%= sesh.end_time %></td>
-      <td><%= sesh.available %></td>
+      <td><%= session.start_time %></td>
+      <td><%= session.end_time %></td>
+      <td><%= session.available %></td>
       <td>
-        <% if !(sesh.available) %>
-          <%= User.find(Appointment.find_by_session_id(sesh.id).student_id).first_name %>
+        <% if !(session.available) %>
+          <%= User.find(Appointment.find_by_session_id(session.id).student_id).first_name %>
         <% end %>
       </td>
     </tr>
