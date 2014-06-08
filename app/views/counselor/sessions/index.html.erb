@@ -35,14 +35,21 @@
         <% end %>
       </td>
       <td>
+        <!-- If the session is open, button to close it -->
         <% if session.available %>
           <%= form_for [:counselor, session], url: counselor_session_path(session), method: :put do |f| %>
-
             <%= f.submit "Close" %>
           <% end %>
-        <% else %>
-          <%= form_for [:counselor, session], url: counselor_session_path(session), method: :put do |f| %>
 
+        <% elsif !session.available && session.appointment %>
+        <!-- If the session is closed AND booked, button to open it -->
+          <%= form_for [:counselor, session], url: counselor_session_path(session), method: :put, data: { confirm: "Are you sure you want to cancel this student's appointment and open the session?" } do |f| %>
+            <%= f.submit "Open" %>
+          <% end %>
+
+        <% else %>
+        <!-- If session is closed but no appt., button to open -->
+          <%= form_for [:counselor, session], url: counselor_session_path(session), method: :put do |f| %>
             <%= f.submit "Open" %>
           <% end %>
         <% end %>
