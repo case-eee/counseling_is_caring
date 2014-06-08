@@ -1,5 +1,6 @@
 class Counselor::SessionsController < ApplicationController
   include CounselorHelper
+  include ApplicationHelper
 
   def index
     #moved out to helper as methods
