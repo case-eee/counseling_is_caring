@@ -13,17 +13,17 @@
     <th>Counselor</th>
     <th>Available?</th>
   </tr>
-  <% @all_sessions.each do |sesh| %>
-    <% if sesh.available %>
+  <% @all_sessions.each do |session| %>
+    <% if session.available %>
       <tr>
-        <td><%= sesh.date.month %></td>
-        <td><%= sesh.date.day %></td>
-        <td><%= sesh.start_time %></td>
-        <td><%= sesh.end_time %></td>
-        <td><%= User.find(sesh.counselor_id).first_name %></td>
+        <td><%= session.date.month %></td>
+        <td><%= session.date.day %></td>
+        <td><%= session.start_time %></td>
+        <td><%= session.end_time %></td>
+        <td><%= User.find(session.counselor_id).first_name %></td>
         <td>
           <%= form_for :appointment, url: {action: "create"} do |f| %>
-            <%= f.hidden_field :session_id, :value => sesh.id %>
+            <%= f.hidden_field :session_id, :value => session.id %>
             <%= f.submit "Book!" %>
           <% end %>
         </td>

@@ -17,12 +17,12 @@ module ApplicationHelper
     Date.today
   end
 
-  def today_sessions
-    Session.where(date: today).reorder('id')
+  def formatted_date(date)
+    date.strftime("%B %d, %Y")
   end
 
-  def future_days
-    Session.where("date >= ?", today).distinct.pluck(:date)
+  def text_to_date(date_text)
+    Date.parse(date_text)
   end
 
   def past_sessions

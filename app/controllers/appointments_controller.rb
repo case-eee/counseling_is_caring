@@ -7,6 +7,7 @@ class AppointmentsController < ApplicationController
 
   def view_all_sessions
     @all_sessions = Session.all
+    Session
   end
 
   def create

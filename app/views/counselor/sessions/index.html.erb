@@ -6,7 +6,7 @@
 
 
 <h2>Today's Appointments</h2>
-<h2> <%= today %> </h2>
+<h2> <%= formatted_date(today) %> </h2>
 <table>
   <tr>
     <th>Start Time</th>
@@ -14,20 +14,20 @@
     <th>Available?</th>
     <th>Student</th>
   </tr>
-  <% today_sessions.sort_by.each do |sesh| %>
+  <% day_sessions(today).sort_by.each do |session| %>
     <tr>
-      <td><%= sesh.start_time %></td>
-      <td><%= sesh.end_time %></td>
+      <td><%= session.start_time %></td>
+      <td><%= session.end_time %></td>
       <td>
-        <% if sesh.available %>
+        <% if session.available %>
           Yes
         <% else %>
           No
         <% end %>
       </td>
       <td>
-        <% if !(sesh.available) %>
-          <%= User.find(Appointment.find_by_session_id(sesh.id).student_id).first_name %>
+        <% if !(session.available) %>
+          <%= User.find(Appointment.find_by_session_id(session.id).student_id).first_name %>
         <% end %>
       </td>
     </tr>
@@ -36,8 +36,8 @@
 
 <!--  NEED TO ADD: Upcoming Appointments -->
 <h2>Upcoming Appointments</h2>
-<% future_days.each do |date| %>
-  <div><a href='/counselor/sessions/<%= date %>'><%=date%></a></div>
+<% future_sessions.each do |date| %>
+  <div><a href='/counselor/sessions/<%= date %>'><%=formatted_date(date)%></a></div>
 <% end %>
 
 <br>
