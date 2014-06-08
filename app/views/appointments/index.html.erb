@@ -13,7 +13,7 @@
   </tr>
   <% @appointments.each do |appt| %>
     <tr>
-      <td><%= Session.find(appt.session_id).date.month %></td>
+      <td><%= Session.find(appt.session_id).date.strftime('%B') %></td>
       <td><%= Session.find(appt.session_id).date.day %></td>
       <td><%= Session.find(appt.session_id).start_time %></td>
       <td><%= Session.find(appt.session_id).end_time %></td>

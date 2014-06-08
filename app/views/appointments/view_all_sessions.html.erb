@@ -16,7 +16,7 @@
   <% @all_sessions.each do |session| %>
     <% if session.available %>
       <tr>
-        <td><%= session.date.month %></td>
+        <td><%= session.date.strftime('%B') %></td>
         <td><%= session.date.day %></td>
         <td><%= session.start_time %></td>
         <td><%= session.end_time %></td>
