@@ -15,10 +15,6 @@ class Counselor::SessionsController < ApplicationController
   def create
     create_sessions(params[:session][:date])
 
-    @day.each do |session|
-      current_user.sessions << session
-    end
-
     redirect_to counselor_sessions_path
   end
 
