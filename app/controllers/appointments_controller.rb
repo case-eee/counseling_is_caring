@@ -8,8 +8,9 @@ class AppointmentsController < ApplicationController
   end
 
   def view_all_sessions
-    @all_sessions = Session.order(:date, :start_time)
-    Session
+    # @all_sessions = Session.order(:date, :start_time)
+
+    # Session
   end
 
   def create
@@ -26,9 +27,11 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = Appointment.find(params[:id])
-    open_session(@appointment)
-    @appointment.destroy
+    session = Session.find_by_id(params[:id])
+    session.update_attributes(available: true)
+    appointment = Appointment.find_by_session_id(session.id)
+    appointment.destroy
+
 
     redirect_to appointments_path
   end
