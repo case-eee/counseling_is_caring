@@ -1,43 +1,42 @@
-<%= form_for :user do |f| %>
- <%= label_tag :first_name %>
- <%= f.text_field :first_name %>
- <br>
+<div class="form-container">
+	<%= form_for :user, html: {class: 'login-form'} do |f| %>
+		<div>
+			<%= label_tag :first_name %>
+			<%= f.text_field :first_name %>
+		</div>
 
-<%= label_tag :last_name %>
-<%= f.text_field :last_name %>
-<br>
+		<div>	
+			<%= label_tag :last_name %>
+			<%= f.text_field :last_name %>
+		</div>
 
-<%= label_tag :role %>
-<%= f.text_field :role %>
-<br>
- 
-<%= label_tag :email %>
- <%= f.text_field :email %>
-<br>
+		<div>
+			<%= label_tag :role %>
+			<%= f.text_field :role %>
+		</div>
+	 
+		<div>
+			<%= label_tag :email %>
+			<%= f.text_field :email %>
+		</div>
 
-  <%= label_tag :password_hash %>
-  <%= f.password_field :password_hash %>
-  <br>
+		<div>
+		  <%= label_tag "Password" %>
+		  <%= f.password_field :password_hash %>
+	  </div>
+
+		<div>
+			<%= label_tag :cohort %>
+			<%= f.text_field :cohort %>
+		</div>
+
+		<div>
+		  <%= f.submit 'Register' %>
+		</div>
+	<% end %>
+</div>
 
 
-
-<%= label_tag :cohort %>
-<%= f.text_field :cohort %>
-<br>
-
-
-  <%= f.submit 'Register' %>
-<% end %>
-
-
-
-
-
-
-<!--  t.string :first_name
-      t.string :last_name
-      t.string :role
-      t.string :email
-      t.string :password_hash
-      t.string :cohort
- -->
+<div>
+	<%= link_to 'Home', root_path %>
+</div>
