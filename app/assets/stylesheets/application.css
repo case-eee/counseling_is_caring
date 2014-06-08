@@ -21,31 +21,35 @@ body {
 header {
   width: 100%;
   display: block;
-  background-color: #fff;  
-  margin: 0;
+  background-color: #fd8480; 
   width: 100%;
-  /*top: 0;*/
   padding: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
 }
 
 header h1{
-  color: #fd8480;
+  color: #fff;
   font-size: 3em;
   margin: 10px;
-  /*padding: 30px;*/
 }
 
 h1 {
   text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Varela Round', sans-serif;
-  color: #fd8480;
+  color: #636260;
+}
+
+h3 {
+  /*font-size: 1.33em;*/
 }
 
 p, a {
   color: #39d4c1;
+  font-size: 1.25em;
 }
 
 a {

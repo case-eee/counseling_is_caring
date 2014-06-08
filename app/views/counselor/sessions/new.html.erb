@@ -1,16 +1,16 @@
-<%= link_to "Back to Home", counselor_sessions_path %>
-
 <h1>Add Upcoming Sessions</h1>
 
+<div>
 <h3>Please enter a date in the following format YYYY/MM/DD to create an entire day of sessions. </h3>
-<%= form_for [:counselor, @new_sesh] do |f| %>
-	<%= f.label :date %>
-  <%= f.date_field :date %>
-  <br>
- 
-   <%= f.submit "Create Day!" %>
-<% end %>
-
+	<%= form_for [:counselor, @new_sesh] do |f| %>
+	  Date: <%= f.date_field :date %>
+	  <br>
+	 
+	   <%= f.submit "Create Day!" %>
+	<% end %>
+</div>
 <br>
 
-<%= link_to "Back to Home", counselor_sessions_path %>
+<div>
+	<%= link_to "Back to Home", counselor_sessions_path %>
+</div>
