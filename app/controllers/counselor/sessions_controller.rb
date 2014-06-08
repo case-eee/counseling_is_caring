@@ -26,10 +26,13 @@ class Counselor::SessionsController < ApplicationController
   def update
     @session = Session.find(params[:id])
 
-    if @session.available == false
+    if @session.available
+      @session.update_attributes(available: false)
+    elsif @session.available == false && @session.appointment
+      @session.appointment.destroy
       @session.update_attributes(available: true)
     else
-      @session.update_attributes(available: false)
+      @session.update_attributes(available: true)
     end
 
     redirect_to counselor_sessions_path
