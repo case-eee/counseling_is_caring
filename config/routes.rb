@@ -7,6 +7,8 @@ end
 resources :appointments
 
 get '/book' => 'appointments#view_all_sessions', as: :book_appointment
+get '/past_appointments' => 'appointments#past_appointments', as: :past_appointment
+
 # get /login (enter name pw) login#form
 # post /login (set userid in session) login#login
 # get /logout login#logout

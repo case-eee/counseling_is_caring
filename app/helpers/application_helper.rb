@@ -25,7 +25,29 @@ module ApplicationHelper
     Date.parse(date_text)
   end
 
+  def past_sessions
+    past = []
+    current_user.appointments.each do |appointment|
+      if appointment.session.date <= today
+        past << appointment
+      end
+    end
+    past    
+  end
 
+  def future_appointments
+    future_sessions = []
+    current_user.appointments.each do |appointment|
+      if appointment.session.date > today
+        future_sessions << appointment
+      end
+    end    
+    future_sessions
+  end
+
+  def date_string
+    future_days.map! { |date| date.to_s}
+  end
 
   def create_sessions(date)
     @day = [
@@ -47,3 +69,4 @@ module ApplicationHelper
   end
 
 end
+

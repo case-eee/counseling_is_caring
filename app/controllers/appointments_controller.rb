@@ -2,9 +2,7 @@ class AppointmentsController < ApplicationController
   include ApplicationHelper
 
   def index
-    @appointments = current_user.appointments
-
-
+    @appointments = future_appointments
   end
 
   def view_all_sessions
@@ -18,7 +16,11 @@ class AppointmentsController < ApplicationController
     close_session(@new_appointment)
     @appointments = current_user.appointments
 
-    render 'index'
+    redirect_to appointments_path
+  end
+
+  def past_appointments
+    @appointments = past_sessions
   end
 
   def destroy

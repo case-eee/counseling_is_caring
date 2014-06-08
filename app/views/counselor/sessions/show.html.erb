@@ -8,9 +8,14 @@
   </tr>
   <% @todays_sessions.each do |session| %>
     <tr>
-      <td><%= session.start_time %></td>
-      <td><%= session.end_time %></td>
-      <td><%= session.available %></td>
+      <td><%= sesh.start_time %></td>
+      <td><%= sesh.end_time %></td>
+      <td><% if sesh.available %>
+          Yes
+        <% else %>
+          No
+        <% end %>
+      </td>
       <td>
         <% if !(session.available) %>
           <%= User.find(Appointment.find_by_session_id(session.id).student_id).first_name %>
