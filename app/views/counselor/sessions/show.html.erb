@@ -2,26 +2,31 @@
 
 <h1 text-align: center ><%= formatted_date(text_to_date(@url_date)) %></h1>
 
+
 <table>
   <tr>
     <th>Start Time</th>
     <th>End Time</th>
-    <th>Available?</th>
-    <th>Student</th>
+    <th>Availability</th>
+    <th>Email</th>
+    <!-- <th>Student</th> -->
   </tr>
   <% @todays_sessions.each do |session| %>
     <tr>
       <td><%= session.start_time %></td>
       <td><%= session.end_time %></td>
-      <td><% if session.available %>
-          Yes
+      <td>
+        <% if session.available %>
+          Open
+        <% elsif session.student != nil %>
+          <%= session.student.first_name %>, <%= session.student.last_name %>
         <% else %>
-          No
+          Closed
         <% end %>
       </td>
       <td>
-        <% if !(session.available) %>
-          <%= User.find(Appointment.find_by_session_id(session.id).student_id).first_name %>
+        <% if session.student != nil %>
+          <%= session.student.email %>
         <% end %>
       </td>
     </tr>

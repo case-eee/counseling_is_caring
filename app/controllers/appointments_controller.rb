@@ -1,8 +1,10 @@
 class AppointmentsController < ApplicationController
+  include AppointmentHelper
   include ApplicationHelper
 
+
   def index
-    @appointments = future_appointments
+
   end
 
   def view_all_sessions
@@ -20,7 +22,7 @@ class AppointmentsController < ApplicationController
   end
 
   def past_appointments
-    @appointments = past_sessions
+
   end
 
   def destroy
