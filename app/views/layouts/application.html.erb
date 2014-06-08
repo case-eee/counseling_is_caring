@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CounselingIsCaring</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<!--   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'> -->
-  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>CounselingIsCaring</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<header>
+			<h1>Counseling is Caring</h1>
+		</header>
+		
+		<%= yield %>
 
-<%= yield %>
-<div id="footer">
-  <p>A TDDedious Production</p>
-</div>
-</body>
+		<footer>
+		  Made by
+		  <%= link_to "Andrew", "http://github.com/omgmakeme" %>,
+		  <%= link_to "Casey", "http://github.com/case-eee" %>,
+		  <%= link_to "Paige", "http://github.com/paigecrum" %>, &
+		  <%= link_to "Tom", "http://github.com/nullet" %>
+		</footer>
+	</body>
 </html>
