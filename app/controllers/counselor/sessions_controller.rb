@@ -23,5 +23,17 @@ class Counselor::SessionsController < ApplicationController
     @todays_sessions = day_sessions(@url_date)
   end
 
+  def update
+    @session = Session.find(params[:id])
+
+    if @session.available == false
+      @session.update_attributes(available: true)
+    else
+      @session.update_attributes(available: false)
+    end
+
+    redirect_to counselor_sessions_path
+  end
+
 
 end
