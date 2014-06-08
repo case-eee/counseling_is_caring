@@ -13,6 +13,7 @@
     <th>End Time</th>
     <th>Availability</th>
     <th>Email</th>
+    <th>Open/Close</th>
     <!-- <th>Student</th> -->
   </tr>
   <% day_sessions(today).sort_by.each do |session| %>
@@ -33,9 +34,23 @@
           <%= session.student.email %>
         <% end %>
       </td>
+      <td>
+        <% if session.available %>
+          <%= form_for [:counselor, session], url: counselor_session_path(session), method: :put do |f| %>
+
+            <%= f.submit "Close" %>
+          <% end %>
+        <% else %>
+          <%= form_for [:counselor, session], url: counselor_session_path(session), method: :put do |f| %>
+
+            <%= f.submit "Open" %>
+          <% end %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
+
 
 <!--  NEED TO ADD: Upcoming Appointments -->
 <h2>Upcoming Appointments</h2>
