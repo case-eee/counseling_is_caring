@@ -1,7 +1,4 @@
-<h1>Student Home Page</h1>
-<h2>Welcome, <%= current_user.first_name %>!</h2>
-
-<h2>Upcoming Appointments</h2>
+<h2>Past Appointments</h2>
 <table>
   <tr>
     <th>Month</th>
@@ -9,7 +6,7 @@
     <th>Start Time</th>
     <th>End Time</th>
     <th>Counselor</th>
-    <th>Cancel Appointment</th>
+    <th>View Notes</th>
   </tr>
   <% @appointments.each do |appt| %>
     <tr>
@@ -18,23 +15,12 @@
       <td><%= Session.find(appt.session_id).start_time %></td>
       <td><%= Session.find(appt.session_id).end_time %></td>
       <td><%= User.find(Session.find(appt.session_id).counselor_id).first_name %></td>
-      <td><%= link_to 'Cancel', appointment_path(appt),
-                method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
+      <td><% link_to "Notes", '#' %></td>
     </tr>
   <% end %>
 </table>
 <br>
 
-<!-- Past Appointments Link - Iceboxed - link takes us back to this page -->
 <div>
-  <%= link_to 'Past Appointments', past_appointment_path %>
-</div>
-
-<div>
-  <%= link_to 'Book Appointment', book_appointment_path %>
-</div>
-
-<div>
-  <%= link_to 'Logout', logout_path %>
+  <%= link_to 'Back to your Homepage', appointments_path %>
 </div>
