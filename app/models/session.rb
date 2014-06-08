@@ -1,6 +1,9 @@
 class Session < ActiveRecord::Base
 	has_one :appointment
-	belongs_to :user, foreign_key: :counselor_id
+
+
+  has_one :student, through: :appointment, source: :user
+	belongs_to :counselor, class_name: "User", foreign_key: 'counselor_id'
 
 end
 
