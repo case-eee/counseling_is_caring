@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   end
 
   def view_all_sessions
-    @all_sessions = Session.all
+    @all_sessions = Session.order(:date, :start_time)
     Session
   end
 
