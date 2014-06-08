@@ -4,7 +4,9 @@ namespace :counselor do
   resources :sessions
 end
 
-resources :appointments
+resources :appointments do
+  resources :comments
+end
 
 get '/book' => 'appointments#view_all_sessions', as: :book_appointment
 get '/past_appointments' => 'appointments#past_appointments', as: :past_appointment

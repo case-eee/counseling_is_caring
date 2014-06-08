@@ -5,7 +5,7 @@
 <h3>Please enter a date in the following format YYYY/MM/DD to create an entire day of sessions. </h3>
 <%= form_for [:counselor, @new_sesh] do |f| %>
 	<%= f.label :date %>
-  <%= f.text_field :date %>
+  <%= f.date_field :date %>
   <br>
  
    <%= f.submit "Create Day!" %>
