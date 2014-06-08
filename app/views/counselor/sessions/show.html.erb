@@ -1,4 +1,7 @@
-<h1><%= formatted_date(text_to_date(@url_date)) %></h1>
+<%= link_to "Back to Home", counselor_sessions_path %>
+
+<h1 text-align: center ><%= formatted_date(text_to_date(@url_date)) %></h1>
+
 <table>
   <tr>
     <th>Start Time</th>
@@ -8,9 +11,9 @@
   </tr>
   <% @todays_sessions.each do |session| %>
     <tr>
-      <td><%= sesh.start_time %></td>
-      <td><%= sesh.end_time %></td>
-      <td><% if sesh.available %>
+      <td><%= session.start_time %></td>
+      <td><%= session.end_time %></td>
+      <td><% if session.available %>
           Yes
         <% else %>
           No
