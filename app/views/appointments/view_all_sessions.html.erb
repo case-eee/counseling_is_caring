@@ -4,30 +4,46 @@
   <%= link_to 'Back to your Homepage', appointments_path %>
 </div>
 
-<table>
+  <% future_open_dates.each do |date| %>
+
+  <div>
+
+
+
+
+  <table>
+    <caption><h2><%= formatted_date(date) %></h2></caption>
   <tr>
-    <th>Month</th>
-    <th>Date</th>
     <th>Start Time</th>
     <th>End Time</th>
     <th>Counselor</th>
-    <th>Available?</th>
+    <th>Sign-up</th>
   </tr>
-  <% @all_sessions.each do |session| %>
-    <% if session.available %>
-      <tr>
-        <td><%= session.date.strftime('%B') %></td>
-        <td><%= session.date.day %></td>
-        <td><%= session.start_time %></td>
-        <td><%= session.end_time %></td>
-        <td><%= User.find(session.counselor_id).first_name %></td>
-        <td>
-          <%= form_for :appointment, url: {action: "create"} do |f| %>
+
+  <% open_sessions_finder(date).each do |session| %>
+
+
+
+  <tr>
+    <td><%= session.start_time %></td>
+    <td><%= session.end_time%></td>
+    <td><%= session.counselor.first_name%></td>
+    <td><%= form_for :appointment, url: {action: "create"} do |f| %>
             <%= f.hidden_field :session_id, :value => session.id %>
             <%= f.submit "Book!" %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  <% end %>
+        <% end %>
+    </td>
+  </tr>
+
+  <%end%>
+</div>
+<br>
+
+<%end%>
+
+
+
+
+
+
 </table>
